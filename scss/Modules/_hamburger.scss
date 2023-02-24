@@ -1,0 +1,74 @@
+// --------------------------------------------------------------------------
+// Hamburger ----------------------------------------------------------------
+// --------------------------------------------------------------------------
+
+.hamburger {
+    width: 57px;
+    span::after {
+        content: "\e9bd";
+    }
+    span {
+        transition: none;
+        border: px solid $midnight;
+        background-color: lighten($midnight, 15%);
+        padding: 0px 6px 4px 6px;
+        border-radius: 4px;
+        box-shadow: 0 0 36px rgba(0,0,0,0.5);
+        // &:hover {
+        //     color: $dark-cream;
+        // }
+    }
+    font-size: em(45px);
+    color: $white;
+    @media screen and (min-width: $brkpoint-lg) {
+        @include collapse;
+    }
+}
+.cross {
+    span::after {
+        content: "\ea0f";
+    }
+    span {
+        transition: none;
+        // &:hover {
+        //     color: $dark-cream;
+        // }
+    }
+    font-size: em(30px);
+    padding-top: 13px;
+    padding-left: 8px;
+    color: $midnight;
+    @include mq(large) {
+        padding-left: 33px;
+    }
+}
+
+.hamburger-container {
+    position: absolute;
+    z-index: 100;
+    left: 3%;
+    margin-top: 10px;
+    display: none;
+    width: 57px;
+    cursor: pointer;
+    div:hover {
+        color: lighten($midnight, 55%);
+    }
+}
+
+.sticky {
+    position: fixed; 
+    display: none;
+    top: -80px;
+    width: 100%;
+    width: inherit;
+    transition: ease .5s;
+}
+.sticky-reveal {
+    transform: translate(0, 80px);
+    transition: ease .5s;
+}
+
+
+
+

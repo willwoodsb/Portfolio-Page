@@ -1,0 +1,84 @@
+// --------------------------------------------------------------------------
+// Form ---------------------------------------------------------------------
+// --------------------------------------------------------------------------
+
+footer{
+    margin-top: 50px;
+}
+.form {
+    @include grid-auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 40px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: $white;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    h3 {
+        font-size: em(20px);
+        font-weight: $font-weight--bold;
+    }
+    h2, p:not(.error) {
+        margin-bottom: 20px;
+    }
+    form {
+        @include grid-auto;
+        grid-gap: 10px;
+        margin-top: 10px;
+        input:not([type=submit]), textarea {
+            width: 100%;
+            padding: 10px 20px;
+            border: none;
+            background-color: $grey;
+            border-radius: 3px;
+        }
+        input[type=submit] {
+            width: 140px;
+            font-weight: $font-weight--ultra-bold;
+            border-radius: 5px;
+            padding: 12px 0;
+            margin-top: 15px;
+            cursor: pointer;
+            background-color: $white;
+            &:hover {
+                background-color: $midnight;
+                color: $white;
+            }
+        }
+        input, textarea {
+            font-size: $font-size--small;
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 3px $midnight;
+            }
+        }
+        #message {
+            height: 100px;
+        }
+    }
+}
+
+#divider {
+    width: 60%;
+}
+
+@media screen and (min-width: $brkpoint-xlg) {
+    .form {
+        grid-template-columns: 250px 1fr;
+
+    }
+}
+
+@media screen and (min-width: $brkpoint-md) and (max-width: $brkpoint-lg) {
+    @include form-column-state;
+}
+@media screen and (min-width: $brkpoint-xxlg) {
+    @include form-column-state;
+}
+
+.error {
+    color: red;
+    font-size: $font-size--small;
+    display: none;
+}
+
+

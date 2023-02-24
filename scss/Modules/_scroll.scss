@@ -1,0 +1,41 @@
+// --------------------------------------------------------------------------
+// Scroll -------------------------------------------------------------------
+// --------------------------------------------------------------------------
+.scroll {
+    display: block;
+}
+.title-section {
+    .scroll {
+        position: absolute;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: em(26px);
+        color: $white;
+        height: 100px;
+        margin-bottom: -30px;
+        span::after {
+            content: "\ea43";
+        }
+        
+    }
+}
+
+footer {
+    .scroll {
+        font-size: em(20px);
+        font-weight: $font-weight--bold;
+        color: $white;
+        text-align: center;
+        padding: 70px 0 0;
+        text-shadow: 0 0 10px rgba(0,0,0,1);
+        span::after {
+            content: "\ea41";
+        }
+    }
+    padding: 0 0 50px;
+}
+
+
+

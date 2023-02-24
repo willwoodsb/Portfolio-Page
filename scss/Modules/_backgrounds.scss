@@ -1,0 +1,50 @@
+// --------------------------------------------------------------------------
+// Backgrounds --------------------------------------------------------------
+// --------------------------------------------------------------------------
+.water {
+    &__header {
+        background-image: url("../img/background.jpg"), linear-gradient(to bottom, darken($canary-wharf, 20%), lighten($canary-wharf, 20%));
+    }
+    &__footer {
+        background-image: url("../img/background.jpg"), linear-gradient(to top, darken($canary-wharf, 20%), lighten($canary-wharf, 20%));
+    }
+    
+}
+.scs {
+    &__header {
+        background-image: url("../img/home-oaVs.webp"), linear-gradient(to bottom, darken($canary-wharf, 20%), lighten($canary-wharf, 20%));
+    }
+}
+.coding {
+    &__header {
+        background-image: url("../img/coding.png"), linear-gradient(to bottom, darken($canary-wharf, 20%), lighten($canary-wharf, 20%));
+        background-position: left;
+    }
+}
+.about-me {
+    &__header {
+        background-image: url("../img/about-me-back.JPG"), linear-gradient(to bottom, darken($canary-wharf, 20%), lighten($canary-wharf, 20%));
+    }
+}
+.water, .about-me, .scs {
+    background-position: center;
+}
+
+.background-image {
+    
+    background-repeat: repeat-y;
+    background-blend-mode: multiply;
+    background-size: cover;
+    border-bottom: 2px solid $midnight;
+    z-index: 0;
+    
+}
+
+
+body {
+    background-color: $white;
+}
+
+.white {
+    background-color: $white;
+}

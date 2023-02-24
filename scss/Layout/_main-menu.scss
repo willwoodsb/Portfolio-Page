@@ -1,0 +1,124 @@
+// --------------------------------------------------------------------------
+// Main Menu ----------------------------------------------------------------
+// --------------------------------------------------------------------------
+.popout-menu {
+    position: fixed;
+    width: 175px;
+    height: 100vh;
+    text-align: center;
+    padding: 40px 10px 40px;
+    border-right: 2px solid $midnight;
+    hr {
+        width: 80px;
+    }
+    &__item {
+        color: $midnight;
+        &:not(hr) {
+            margin: 20px 0 20px;
+        }
+        @include mq(large) {
+            transition-delay: .5s;
+        }
+        &:nth-child(2) {
+            margin-top: 40px;
+            margin-bottom: 100px;
+        }
+        &:nth-child(7) {
+            margin-top: 40px;
+        }
+        &:not(:last-child):not(:first-child) {
+            a {
+                color:$midnight;
+                font-weight: $font-weight--bold;
+                &:hover {
+                    text-decoration: underline;
+                }   
+            } 
+        }
+        &:last-child {
+            margin-top: 25px;
+            div {
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                @include auto-mg-hor;
+                position: relative;
+                &:hover {
+                    background-color: $midnight;
+                    span {
+                        color: white
+                    }
+                }  
+            } 
+        }
+        span {
+            @extend %img-center;
+            color: $midnight;
+            &::after {
+                content: "\eaca";
+            }
+        }
+        #contact {
+            font-weight: $font-weight--ultra-bold;
+        }
+    }
+}
+
+//lanscape small screen condition
+@media screen and (max-height: 570px) {
+    .popout-menu {
+        transition: none;
+        padding: 20px 10px 40px;
+        &__item {
+            &:not(hr) {
+                margin: 10px 0 10px;
+            }
+            @media screen and (min-width: $brkpoint-lg) {
+                transition-delay: .5s;
+            }
+            &:nth-child(2) {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            &:nth-child(7) {
+                margin-top: 20px;
+            }
+        }
+    }    
+}
+
+//makes main body move to right when menu opens 
+.body {
+    @include flex-row;
+    justify-content: center;
+    &__item:first-child {
+        z-index: 99;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 175px;
+        height: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        @media screen and (max-width: ($brkpoint-lg - 1)) {
+            width: 0;
+        }
+    }
+    &__item:last-child {
+        flex-grow: 1;
+    }
+}
+
+//main home button at top of menu
+.home  {
+    font-size: em(30px);
+    font-weight: $font-weight--ultra-bold;
+    a{color: $midnight;}
+    a:hover {
+        color: darken($midnight, 20%);
+        text-decoration: none;
+    }
+}
+
+
+
