@@ -8,8 +8,9 @@
     grid-gap: 30px;
     &__item {
         color: $midnight;
+        
         .padded {
-            padding: 10px 0 25px;
+            padding: 10px 5px 25px;
         }
         img {
             transition: ease .5s;
@@ -24,9 +25,9 @@
             
         }
         .view-link {
-            color: $midnight;
+            color: $dusk-blue;
             @include flex-row;
-            font-weight: $font-weight--medium;
+            font-weight: $font-weight--bold;
             p:hover {
                 text-decoration: underline;
             }
@@ -37,6 +38,11 @@
                     content: "\ea3c";
                 }
             }
+        }
+        .description {
+            margin-top: 5px;
+            line-height: 18px;
+            color: darken($dark-grey, 20%);
         }
     }
 }

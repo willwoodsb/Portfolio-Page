@@ -1,0 +1,31 @@
+#success {
+    width: 100%;
+    display: none;
+    @include flex-row;
+    justify-content: space-between;
+    z-index: 10000000;
+    margin-bottom: 20px;
+    span::after {
+        content: "\ea0f";
+    }
+    span {
+        transform: translate(0, 2px);
+        font-size: 10px;
+        cursor: pointer;
+        padding: 5px 5px 0;
+    }
+}
+
+.submit-message {
+    color: $white;
+    background-color: $jasper;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    display: none;
+}
+
+.success {
+    background-color: $ufo-green;
+}

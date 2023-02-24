@@ -283,7 +283,7 @@ hr {
   .portfolio__item {
     color: #333645; }
     .portfolio__item .padded {
-      padding: 10px 0 25px; }
+      padding: 10px 5px 25px; }
     .portfolio__item img {
       transition: ease .5s;
       width: 100%;
@@ -292,10 +292,10 @@ hr {
     .portfolio__item:hover img {
       transform: translate(0, -10px); }
     .portfolio__item .view-link {
-      color: #333645;
+      color: #67809F;
       display: flex;
       flex-direction: row;
-      font-weight: 500; }
+      font-weight: 700; }
       .portfolio__item .view-link p:hover {
         text-decoration: underline; }
       .portfolio__item .view-link span {
@@ -304,6 +304,10 @@ hr {
         margin-left: 5px; }
         .portfolio__item .view-link span::after {
           content: "\ea3c"; }
+    .portfolio__item .description {
+      margin-top: 5px;
+      line-height: 18px;
+      color: #66676f; }
 
 @media screen and (min-width: 992px) {
   .portfolio {
@@ -409,15 +413,17 @@ hr {
 footer {
   margin-top: 50px; }
 
+#form {
+  border-radius: 10px;
+  background-color: #FFF;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+
 .form {
   display: grid;
   grid-template-rows: auto;
   grid-column-gap: 50px;
-  grid-row-gap: 40px;
-  padding: 30px;
-  border-radius: 10px;
-  background-color: #FFF;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+  grid-row-gap: 40px; }
   .form h3 {
     font-size: 1.25em;
     font-weight: 700; }
@@ -684,6 +690,34 @@ footer {
     text-shadow: 0 0 10px black; }
     footer .scroll span::after {
       content: "\ea41"; }
+
+#success {
+  width: 100%;
+  display: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 10000000;
+  margin-bottom: 20px; }
+  #success span::after {
+    content: "\ea0f"; }
+  #success span {
+    transform: translate(0, 2px);
+    font-size: 10px;
+    cursor: pointer;
+    padding: 5px 5px 0; }
+
+.submit-message {
+  color: #FFF;
+  background-color: #d64541;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  display: none; }
+
+.success {
+  background-color: #2ecc71; }
 
 @media screen and (max-width: 767px) {
   .is-visible-large-screen {

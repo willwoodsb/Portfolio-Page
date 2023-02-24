@@ -16,8 +16,6 @@ let scrollPos = 0;
 
 //hide non JS elements
 $('.no-JS').hide();
-// $('#index-nav').children().css('width', '0');
-// $('#index-nav').css('width', '0').css('visibility', 'hidden');
 
 $('#scroll-down p, #scroll-down span').hide();
 
@@ -27,53 +25,42 @@ $('.hamburger-container').css('display', 'inline');
 //on load animations for main header section
 
 $(document).ready(function() {
-    $(".animsition").animsition({
-        inClass: 'fade-in',
-        outClass: 'fade-out',
-        inDuration: 1500,
-        outDuration: 800,
-        linkElement: '.animsition-link',
-        // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
-        loading: true,
-        loadingParentElement: 'body', //animsition wrapper element
-        loadingClass: 'animsition-loading',
-        loadingInner: '', // e.g '<img src="loading.svg" />'
-        timeout: false,
-        timeoutCountdown: 5000,
-        onLoadEvent: true,
-        browser: [ 'animation-duration', '-webkit-animation-duration'],
-        // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-        // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-        overlay : false,
-        overlayClass : 'animsition-overlay-slide',
-        overlayParentElement : 'body',
-        transition: function(url){ window.location.href = url; }
-    });
-    
-    //header animations
-    setTimeout(function() {
-        $(function() {
-            $('#name').selfw({
-                text: 'My Name is Will Woods Ballard',
-                time: 110,
-            })
-        });
-
+    if (accessed == "n") {
+        //header animations
         setTimeout(function() {
             $(function() {
-                $('#web-dev').selfw({
-                    text: 'I\'m a Web Developer',
+                $('#name').selfw({
+                    text: 'My Name is Will Woods Ballard',
                     time: 110,
                 })
-            })
-        }, 3500);
+            });
 
-        setTimeout(function() {
-            $('#scroll-down p, #scroll-down span').fadeIn(100);
-            // $('#index-nav').css('width', '').css('visibility', '');
-            // $('#index-nav').children().css('width', '');
-        }, 5500);
-    }, 1500);
+            setTimeout(function() {
+                $(function() {
+                    $('#web-dev').selfw({
+                        text: 'I\'m a Web Developer',
+                        time: 110,
+                    })
+                })
+            }, 3500);
+
+            setTimeout(function() {
+                $('#scroll-down p, #scroll-down span').fadeIn(100);
+            }, 5500);
+        }, 1500);
+    } else {
+        $('.no-JS').fadeIn(500);
+        $('#scroll-down p, #scroll-down span').fadeIn(500);
+    }
+    
+    setTimeout(function() {
+        $('.submit-message').slideDown(200);
+    }, 500);
+
+    setTimeout(function() {
+        $('.submit-message').slideUp(200);
+    }, 8000);
+    
 });
 
 
@@ -111,9 +98,11 @@ input.on('change', function (event) {
 
 function submitForm(userInput){
     if(validateEmail(userInput.email) && !!userInput.fname.value && !!userInput.lname.value && !!userInput.message.value) {
-        alert('Your message has been submitted, thank you for getting in touch!');
+        return true;
         
-    };
+    } else {
+        return false;
+    }
 }
 
 
@@ -287,6 +276,12 @@ function isHovering(element) {
     }  
 
 }
+
+$('.submit-message .icon').on('click', function(e) {
+    $parent = $(e.target).parent();
+    $parent.slideUp(100);
+});
+
 
 
 

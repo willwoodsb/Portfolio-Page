@@ -1,3 +1,26 @@
+<?php
+
+session_start();
+
+$success = null;
+if (isset($_SESSION["success"])) {
+  if ($_SESSION["success"]) {
+    $success = true;
+  } else if ($_SESSION["success"] === false) {
+    $success = false;
+  }
+  $_SESSION["success"] = null;
+}
+
+if (isset($_SESSION["accessed"])) {
+  $accessed = 'y';
+} else {
+  $accessed = 'n';
+}
+$_SESSION["accessed"] = true;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,11 +29,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio | Will Woods Ballard | Web Developer</title>
     <link rel="stylesheet" href="css/application.css">
-    <link rel="stylesheet" href="animsition/animsition.min.css">
     <link rel="icon" href="img/W.png" type="image/x-icon">
   </head>
   <body>
-    <div class="animsition">
+    <div class="">
       <!-- hamburger -->
       <a class="hamburger-container width">
         <div class="hamburger"><span class="icon"></span></div>
@@ -59,46 +81,11 @@
           <main class="white">
             <!-- Main content -->
             <section id="portfolio" class="portfolio width">
-              <div class="portfolio__item">
-                <img src="img/netmatters.png" alt="Netmatters">
-                <div class="padded">
-                  <h2>Project One</h2>
-                  <a href="https://willwoodsb.github.io/HTML-and-CSS-Reflection/" target="_blank" class="view-link"><p>View Website</p><span class="icon"></span></a>
-                  <a href="https://github.com/willwoodsb/HTML-and-CSS-Reflection" target="_blank" class="view-link"><p>View Github Repo</p><span class="icon"></span></a>
-                </div>
-              </div>
+              <?php include 'inc/portfolioItem.php'; ?>
               <div class="portfolio__item">
                 <img src="img/placeholder1.jpg" alt="Placeholder Image">
                 <div class="padded">
-                  <h2>Project Two</h2>
-                  <div class="view-link"><p>Coming Soon</p></div>
-                </div>
-              </div>
-              <div class="portfolio__item">
-                <img src="img/placeholder2.jpg" alt="Placeholder Image">
-                <div class="padded">
                   <h2>Project Three</h2>
-                  <div class="view-link"><p>Coming Soon</p></div>
-                </div>
-              </div>
-              <div class="portfolio__item">
-                <img src="img/placeholder3.jpg" alt="Placeholder Image">
-                <div class="padded">
-                  <h2>Project Four</h2>
-                  <div class="view-link"><p>Coming Soon</p></div>
-                </div>
-              </div>
-              <div class="portfolio__item">
-                <img src="img/placeholder4.jpg" alt="Placeholder Image">
-                <div class="padded">
-                  <h2>Project Five</h2>
-                  <div class="view-link"><p>Coming Soon</p></div>
-                </div>
-              </div>
-              <div class="portfolio__item">
-                <img src="img/placeholder5.jpg" alt="Placeholder Image">
-                <div class="padded">
-                  <h2>Project Six</h2>
                   <div class="view-link"><p>Coming Soon</p></div>
                 </div>
               </div>
@@ -107,33 +94,46 @@
             
 
             <!-- Contact Form -->
-            <section class="width form" id="form">
-              <div class="form__col">
-                <h2>Get In Touch</h2>
-                <p>Please contact me via the form, I will be happy to recieve your message and will get back to you as soon as possible!</p>
-                <h3>07741 487037</h3>
-                <h3>willwoodsb@gmail.com</h3>
-              </div>
-              <div class="form__col">
-                <form method="post" name="myForm" action="#">
-                  <div class="form__col--child">
-                    <input type="text" class="" id="fname" name="fname" placeholder="First Name" required>
-                    <p class="error">Please enter your first name</p>
+            <section class="width" id="form">
+              <?php if ($success === false) { ?>
+                <div class="submit-message" id="success">
+                    <p>Something has gone wrong, your query could not be submitted.</p>
+                    <span class="icon"></span>
+                </div>
+              <?php } else if ($success) { ?>
+                  <div class="submit-message success" id="success">
+                      <p>Your query has been submitted! Thanks for getting in touch.</p>
+                      <span class="icon"></span>
                   </div>
-                  <div class="form__col--child">
-                    <input type="text" class="" id="lname" name="lname" placeholder="Last Name" required>
-                    <p class="error">Please enter your last name</p>
-                  </div>
-                  <div class="form__col--child">
-                    <input type="email" class="" id="email" name="email" placeholder="Email Address" required>
-                    <p class="error">Please enter a valid email</p>
-                  </div>
-                  <div class="form__col--child">
-                    <textarea class="" id="message" name="message" placeholder="Message" required></textarea>
-                    <p class="error">Please enter a message</p>
-                  </div>
-                  <input type="submit" class="form__col--child" value="Send Message" onclick="submitForm(document.myForm)">
-                </form>
+              <?php } ?>
+              <div class="form">
+                <div class="form__col">
+                  <h2>Get In Touch</h2>
+                  <p>Please contact me via the form, I will be happy to recieve your message and will get back to you as soon as possible!</p>
+                  <h3>07741 487037</h3>
+                  <h3>willwoodsb@gmail.com</h3>
+                </div>
+                <div class="form__col">
+                  <form method="post" name="myForm" action="inc/postData.php">
+                    <div class="form__col--child">
+                      <input type="text" class="" id="fname" name="fname" placeholder="First Name" required>
+                      <p class="error">Please enter your first name</p>
+                    </div>
+                    <div class="form__col--child">
+                      <input type="text" class="" id="lname" name="lname" placeholder="Last Name" required>
+                      <p class="error">Please enter your last name</p>
+                    </div>
+                    <div class="form__col--child">
+                      <input type="email" class="" id="email" name="email" placeholder="Email Address" required>
+                      <p class="error">Please enter a valid email</p>
+                    </div>
+                    <div class="form__col--child">
+                      <textarea class="" id="message" name="message" placeholder="Message" required></textarea>
+                      <p class="error">Please enter a message</p>
+                    </div>
+                    <input type="submit" class="form__col--child" value="Send Message" onclick="submitForm(document.myForm)">
+                  </form>
+                </div>
               </div>
             </section>
 
@@ -154,6 +154,9 @@
       </div>  
     </div>
     <!-- JS links -->
+    <script>
+      const accessed = <?php echo "'" . $accessed . "'"; ?>;
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.6.2.min.js"
       integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
@@ -164,7 +167,6 @@
       integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
       crossorigin="anonymous">
     </script>
-    <script src="animsition/animsition.min.js"></script>
     <script src="text-effect/selfw.js"></script>
     <script src="js/app.js"></script>
   </body>
