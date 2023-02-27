@@ -348,11 +348,17 @@ hr {
       .popout-menu__item:not(:last-child):not(:first-child) a:hover {
         text-decoration: underline; }
     .popout-menu__item:last-child {
-      margin-top: 25px; }
+      margin-top: 25px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center; }
+      .popout-menu__item:last-child a {
+        padding: 3px; }
       .popout-menu__item:last-child div {
         height: 30px;
         width: 30px;
         border-radius: 50%;
+        border: 1px solid #333645;
         margin-left: auto;
         margin-right: auto;
         position: relative; }
@@ -362,8 +368,10 @@ hr {
             color: white; }
     .popout-menu__item span {
       color: #333645; }
-      .popout-menu__item span::after {
-        content: "\eaca"; }
+    .popout-menu__item .linkedin:after {
+      content: "\eaca"; }
+    .popout-menu__item .github:after {
+      content: "\eab0"; }
     .popout-menu__item #contact {
       font-weight: 900; }
 
@@ -531,9 +539,6 @@ footer {
   @media screen and (min-width: 577px) {
     .aux-text h2 {
       font-size: 2em; } }
-  @media screen and (min-width: 992px) {
-    .aux-text {
-      padding: 0 8vw; } }
 
 .logo {
   position: relative;
@@ -550,10 +555,28 @@ footer {
     color: #333645;
     font-weight: 900;
     font-style: italic; }
+  #about-me-text a {
+    color: #858ba5; }
 
 pre {
   margin: 25px 0;
   width: 100%; }
+
+@media screen and (min-width: 1200px) {
+  .text-grid {
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-gap: 30px; }
+    .text-grid__item:first-of-type {
+      display: flex;
+      flex-direction: column;
+      grid-column-start: 1;
+      grid-column-end: 2; }
+    .text-grid__item:last-of-type {
+      display: flex;
+      flex-direction: column;
+      grid-column-start: 2;
+      grid-column-end: 3; } }
 
 .water__header {
   background-image: url("../img/background.jpg"), linear-gradient(to bottom, #5c6e83, #ced5dd); }

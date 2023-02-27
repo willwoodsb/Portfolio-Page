@@ -118,6 +118,7 @@ $('.scroll, .internal-links').on('click', function(event) {
     if ($(event.target).hasClass('internal-links')) {
         popoutState = true;
     } 
+    console.log('yampa');
     let target = $(this.getAttribute('href'));
     if (target.length) {
         event.preventDefault();

@@ -37,10 +37,16 @@
         }
         &:last-child {
             margin-top: 25px;
+            @include flex-row;
+            justify-content: center;
+            a {
+                padding: 3px;
+            }
             div {
                 height: 30px;
                 width: 30px;
                 border-radius: 50%;
+                border: 1px solid $midnight;
                 @include auto-mg-hor;
                 position: relative;
                 &:hover {
@@ -54,9 +60,12 @@
         span {
             @extend %img-center;
             color: $midnight;
-            &::after {
-                content: "\eaca";
-            }
+        }
+        .linkedin:after {
+            content: "\eaca";
+        }
+        .github:after {
+            content: "\eab0";
         }
         #contact {
             font-weight: $font-weight--ultra-bold;

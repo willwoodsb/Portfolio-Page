@@ -2,14 +2,14 @@
 
 $portfolio_array = [];
 
-$portfolio_array[] = [
+$portfolio_array["netmatters"] = [
     "title" => "Netmatters",
     "website-link" => "https://netmatters.william-woodsballard.netmatters-scs.co.uk/",
     "repo-link" => "https://github.com/willwoodsb/Netmatters-Landing-Page",
     "img-path" => "img/netmatters.png",
     "description" => "Recreation of the Netmatters landing page and contact page (click on the contact button in the header)."
 ];
-$portfolio_array[] = [
+$portfolio_array["js-array"] = [
     "title" => "JS Array",
     "website-link" => "#",
     "repo-link" => "https://github.com/willwoodsb/JS-Array",
