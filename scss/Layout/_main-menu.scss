@@ -96,27 +96,39 @@
     }    
 }
 
-//makes main body move to right when menu opens 
-.body {
-    @include flex-row;
-    justify-content: center;
-    &__item:first-child {
-        z-index: 99;
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 175px;
-        height: 100%;
-        flex-grow: 0;
-        flex-shrink: 0;
-        @media screen and (max-width: ($brkpoint-lg - 1)) {
-            width: 0;
+@media screen and (max-width: ($brkpoint-lg - 1)) {
+    #index-nav {
+        position: fixed;
+        width: 100vw;
+        left: -100vw;
+        height: 100vh;
+        .popout-menu {
+            width: 100vw;
         }
     }
-    &__item:last-child {
-        flex-grow: 1;
+}
+
+//makes main body move to right when menu opens 
+@include mq(large) {
+    .body {
+        @include flex-row;
+        justify-content: center;
+        &__item:first-child {
+            z-index: 99;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 175px;
+            height: 100%;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+        &__item:last-child {
+            flex-grow: 1;
+        }
     }
 }
+
 
 //main home button at top of menu
 .home  {
@@ -129,5 +141,8 @@
     }
 }
 
+.slide-right {
+    transform: translate(100vw, 0); 
+}
 
 

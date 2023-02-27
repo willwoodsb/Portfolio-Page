@@ -24,9 +24,6 @@
     span::after {
         content: "\ea0f";
     }
-    span {
-        transition: none;
-    }
     font-size: em(30px);
     padding-top: 13px;
     padding-left: 8px;
@@ -58,6 +55,8 @@
     transform: translate(0, 80px);
     transition: ease .5s;
 }
+
+
 
 
 

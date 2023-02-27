@@ -7,12 +7,20 @@
     box-sizing: border-box;
 }
 
+html.noscroll, .noscroll {
+    position: fixed; 
+    overflow-y: scroll;
+    width: 100%;
+}
+  
+
 body {
     font-weight: $font-weight--light;
     font-size: $base__font-size;
     font-family: $font-family--primary;
     line-height: ($base__line/$base__font-size);
     letter-spacing: $letter-space;
+    overflow-x: hidden;
 }
 
 @font-face {

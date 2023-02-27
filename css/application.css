@@ -172,12 +172,18 @@ th {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+html.noscroll, .noscroll {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%; }
+
 body {
   font-weight: 400;
   font-size: 16px;
   font-family: "Mulish", sans-serif;
   line-height: 1.5;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  overflow-x: hidden; }
 
 @font-face {
   font-family: 'IcoMoon-Free';
@@ -390,25 +396,30 @@ hr {
       margin-bottom: 20px; }
     .popout-menu__item:nth-child(7) {
       margin-top: 20px; } }
-.body {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
-  .body__item:first-child {
-    z-index: 99;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 175px;
-    height: 100%;
-    flex-grow: 0;
-    flex-shrink: 0; }
-    @media screen and (max-width: 767px) {
-      .body__item:first-child {
-        width: 0; } }
-  .body__item:last-child {
-    flex-grow: 1; }
-
+@media screen and (max-width: 767px) {
+  #index-nav {
+    position: fixed;
+    width: 100vw;
+    left: -100vw;
+    height: 100vh; }
+    #index-nav .popout-menu {
+      width: 100vw; } }
+@media screen and (min-width: 768px) {
+  .body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    .body__item:first-child {
+      z-index: 99;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 175px;
+      height: 100%;
+      flex-grow: 0;
+      flex-shrink: 0; }
+    .body__item:last-child {
+      flex-grow: 1; } }
 .home {
   font-size: 1.875em;
   font-weight: 900; }
@@ -417,6 +428,9 @@ hr {
   .home a:hover {
     color: #08080a;
     text-decoration: none; }
+
+.slide-right {
+  transform: translate(100vw, 0); }
 
 footer {
   margin-top: 50px; }
@@ -682,8 +696,6 @@ body {
   color: #333645; }
   .cross span::after {
     content: "\ea0f"; }
-  .cross span {
-    transition: none; }
   @media screen and (min-width: 768px) {
     .cross {
       padding-left: 33px; } }

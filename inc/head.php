@@ -39,8 +39,8 @@ $_SESSION["accessed"] = true;
       <!-- Container div for the content of the website. Contains two item divs, one for the main menu and one for the main content of the website. -->
       <div class="body">
         <!-- Main menu -->
-        <section class="body__item is-visible-large-screen" id="index-nav">
-          <div class="popout-menu white is-visible-large-screen">
+        <section class="body__item" id="index-nav">
+          <div class="popout-menu white">
             <div class="home popout-menu__item"><a href="./" class="<?php if ($title == 'Portfolio') {echo 'internal-links';} ?>">WWB</a></div>
             <hr class="popout-menu__item">
             <div class="popout-menu__item"><a href="./about-me.php">About Me</a></div>

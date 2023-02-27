@@ -118,7 +118,6 @@ $('.scroll, .internal-links').on('click', function(event) {
     if ($(event.target).hasClass('internal-links')) {
         popoutState = true;
     } 
-    console.log('yampa');
     let target = $(this.getAttribute('href'));
     if (target.length) {
         event.preventDefault();
@@ -142,70 +141,41 @@ window.addEventListener('mousemove', (e) => {
 });
 
 
-// menu popout click watcher 
-$('.hamburger-container div, .internal-links').on('click', (event) => {
+function addTransition(object, milliseconds = 500) {
+    seconds = milliseconds / 1000;
+    seconds = seconds.toString();
+    seconds = seconds.concat('s');
+    $(object).css('transition', seconds);
+    setTimeout(function() {
+        $(object).css('transition', '');
+    }, milliseconds)
+}
 
-    //if the popout is not out, open it and add css properties and transitions to make look good 
-    if (popoutState == false) {
-        scrollPos = window.pageYOffset; //store scroll position
-        $hamburger.removeClass('hamburger');
-        $popout.parent().removeClass('is-visible-large-screen').css('width', '100vw').css('transition', 'width ease .5s').css('background-color', 'white');
-        $main.hide("slide", { direction: "right" }, 500);
-        //wait until transitions have finished to make cross appear
-        setTimeout(function () {
-            $popout.removeClass('is-visible-large-screen').removeClass('body__item').css('width', '100vw');
-            $hamburger.addClass('cross');
+$('.hamburger-container div, .internal-links').on('click', function() {
+    if (!popoutState) {
+        scrollPos = $(document).scrollTop();
+        $('.main').css('top', -scrollPos).addClass('noscroll');
+        addTransition($('.body__item'));
+        $('.body__item').addClass('slide-right');
+        $('.hamburger').removeClass('hamburger').addClass('cross').hide();
+        setTimeout(function() {
+            $('.cross').show();
         }, 500);
         popoutState = true;
-
-    //otherwise close it and remove css properties and transitions
     } else {
-        $hamburger.removeClass('cross');
-        $popout.parent().addClass('is-visible-large-screen').css('background-color', '').css('width', '');
-        $popout.addClass('is-visible-large-screen').css('transition-delay', '').css('width', '');
-        $main.show("slide", { direction: "right" },10);
-
-        //wait until transitions have finished to make hamburger reappear
-        setTimeout(function () {
-            $hamburger.addClass('hamburger');
+        addTransition($('.body__item'));
+        $('.body__item').removeClass('slide-right');
+        $('.cross').removeClass('cross').addClass('hamburger').hide();
+        setTimeout(function() {
+            $('.hamburger').show();
+            $('.main').css('top', '').removeClass('noscroll');
+            window.scrollTo(0, scrollPos);
         }, 500);
         popoutState = false;
-
-        setTimeout(function() {
-            //if the item that was clicked on was an internal link, scroll to section
-            if ($(event.target).hasClass('internal-links')) {
-                //make string containing the id at the end of the href
-                let href = event.target.href;
-                href = href.substring(href.indexOf('#') + 1);
-                href = `#${href}`;
-                //first gets close to position but not exact due to screen resizing
-                $('html, body').stop().animate({
-                    scrollTop: $(href).offset().top
-                }, 500);
-                //second gets to exact position
-                setTimeout(function() {
-                    $('html, body').stop().animate({
-                        scrollTop: $(href).offset().top
-                    }, 100);
-                }, 500);
-            }
-            //otherwise scroll to the stored scroll position
-            else {
-                //first gets close to position but not exact due to screen resizing
-                $('html, body').stop().animate({
-                    scrollTop: scrollPos
-                }, 0);
-                //second gets to exact position
-                setTimeout(function() {
-                    $('html, body').stop().animate({
-                        scrollTop: scrollPos
-                    }, 100);
-                }, 500);
-            }
-        }, 0);
-        
     }
 });
+
+
 
 
 //---------------------------
@@ -261,6 +231,9 @@ function makeSticky(element) {
  
 //test id the user is hovering over an element
 function isHovering(element) {
+    if (popoutState) {
+        return true;
+    }
 
     // check if user is on touch screen device as cannot hover on touch screen
     if(!!navigator.userAgent.match(/iphone|android|blackberry/ig)) {
