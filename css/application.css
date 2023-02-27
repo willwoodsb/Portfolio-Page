@@ -578,6 +578,32 @@ pre {
       grid-column-start: 2;
       grid-column-end: 3; } }
 
+.skills-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .skills-grid__item {
+    width: 230px;
+    margin-bottom: 20px; }
+  @media screen and (min-width: 992px) {
+    .skills-grid {
+      justify-content: center; } }
+  @media screen and (min-width: 1200px) {
+    .skills-grid__item {
+      width: 250px; }
+    .skills-grid:not(:first-of-type) {
+      margin-left: 10px; }
+    .skills-grid:not(:last-of-type) {
+      margin-right: 10px; } }
+  .skills-grid h3 {
+    color: #d64541; }
+
+#skills-title {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px; }
+
 .water__header {
   background-image: url("../img/background.jpg"), linear-gradient(to bottom, #5c6e83, #ced5dd); }
 .water__footer {
@@ -636,8 +662,7 @@ body {
     content: "\e9bd"; }
   .hamburger span {
     transition: none;
-    border: px solid #333645;
-    background-color: #545871;
+    background-color: #333645;
     padding: 0px 6px 4px 6px;
     border-radius: 4px;
     box-shadow: 0 0 36px rgba(0, 0, 0, 0.5); }
@@ -671,8 +696,6 @@ body {
   display: none;
   width: 57px;
   cursor: pointer; }
-  .hamburger-container div:hover {
-    color: #c0c3d0; }
 
 .sticky {
   position: fixed;

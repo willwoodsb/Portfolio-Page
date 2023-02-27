@@ -104,3 +104,35 @@ pre {
         }
     }
 }
+.skills-grid {
+    @include flex-row;
+    flex-wrap: wrap;
+    justify-content: center;
+    &__item {
+        width: 230px;
+        margin-bottom: 20px;
+    }
+    @include mq(x-large) {
+        justify-content: center;
+    }
+    @include mq(xx-large) {
+        &__item {
+            width: 250px;
+                    }
+        &:not(:first-of-type) {
+            margin-left: 10px;
+        }
+        &:not(:last-of-type) {
+            margin-right: 10px;
+        }
+    }
+    h3 {
+        color: $jasper;
+    }
+}
+
+#skills-title {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}

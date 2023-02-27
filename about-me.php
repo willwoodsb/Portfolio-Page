@@ -18,8 +18,31 @@ include 'inc/head.php';
             <section class="width aux-text" id="about-me-text">
               <p>I am a highly motivated, logically minded and creative individual, 
               looking to pursue a career in Tech. To this end, I am currently
-              studying on the <a href="https://www.netmatters.co.uk/skills-bootcamp" target="_blank">Netmatters Code Bootcamp</a> programme, which will give me the tools
+              studying on the <a href="./scs.php">Netmatters Code Bootcamp</a> programme, which will give me the tools
               I need to be a highly proficient, full-stack developer.</p>
+              <h2 id="skills-title">Skills</h2>
+              <div class="skills-grid">
+                <div class="skills-grid__item">
+                  <h3>HTML5</h3>
+                  <p>Very comfortable with semantic markup and general structuring.</p>
+                </div>
+                <div class="skills-grid__item">
+                  <h3>CSS3</h3>
+                  <p>Able to manage layouts with both Flexbox and CSS Grid, in conjunction with SASS.</p>
+                </div>
+                <div class="skills-grid__item">
+                  <h3>JavaScript</h3>
+                  <p>Able to use vanilla JavaScript as well as jQuery and AJAX to effectively make dynamic and interactive websites.</p>
+                </div>
+                <div class="skills-grid__item">
+                  <h3>PHP</h3>
+                  <p>Knowledge of the language, including experience building applications using it.</p>
+                </div>
+                <div class="skills-grid__item">
+                  <h3>Git</h3>
+                  <p>Used frequently while working on projects.</p>
+                </div>
+              </div>
               <h2>Education</h2>
               <div class="text-grid">
                 <div class="text-grid__item">
@@ -48,6 +71,17 @@ include 'inc/head.php';
                     satisfaction from the creative process, whether I am writing and recording music or coding, I am most 
                     engaged when I am working on a project that requires a degree of creative thinking.
                     </p>
+                </div>
+              </div>
+              <h2>Hobbies</h2>
+              <div class="text-grid">
+                <div class="text-grid__item">
+                  <h3>Music Technology</h3>
+                  <p>As both a musician and producer, I am obsessed with music technology. I have extensively used software such as Ableton Live for recording and interacting with hardware.</p>
+                </div>
+                <div class="text-grid__item">
+                  <h3>Ski Touring</h3>
+                  <p>I am a firm believer that skiing is much more enjoyable if you walk up the mountain first. This hobby has become the primary motivation behind most of the traveling I do, taking me to places such as Kazakhstan and Japan.</p>
                 </div>
               </div>
             </section>

@@ -9,14 +9,10 @@
     }
     span {
         transition: none;
-        border: px solid $midnight;
-        background-color: lighten($midnight, 15%);
+        background-color: lighten($midnight, 0%);
         padding: 0px 6px 4px 6px;
         border-radius: 4px;
         box-shadow: 0 0 36px rgba(0,0,0,0.5);
-        // &:hover {
-        //     color: $dark-cream;
-        // }
     }
     font-size: em(45px);
     color: $white;
@@ -30,9 +26,6 @@
     }
     span {
         transition: none;
-        // &:hover {
-        //     color: $dark-cream;
-        // }
     }
     font-size: em(30px);
     padding-top: 13px;
@@ -51,9 +44,6 @@
     display: none;
     width: 57px;
     cursor: pointer;
-    div:hover {
-        color: lighten($midnight, 55%);
-    }
 }
 
 .sticky {

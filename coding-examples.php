@@ -147,6 +147,11 @@ function makeSticky(element) {
 //test id the user is hovering over an element
 function isHovering(element) {
 
+    // check if user is on touch screen device as cannot hover on touch screen
+    if(!!navigator.userAgent.match(/iphone|android|blackberry/ig)) {
+        return false;
+    }
+
     // Get the element's position  
     const position = element.getBoundingClientRect();
 

@@ -13,8 +13,8 @@ include 'inc/head.php';
             <!-- Main title section -->
             <section class="title-section width" id="index-title">
               <div id="title">
-                <h1 class="no-JS">My Name is Will Woods Ballard</h1>
-                <h3 class="no-JS">I'm a Web Developer</h3>
+                <h1 class="no-JS" style="display: none;">My Name is Will Woods Ballard</h1>
+                <h3 class="no-JS"style="display: none;">I'm a Web Developer</h3>
                 <h1 id="name"></h1>
                 <h3 id="web-dev"></h3>
               </div>
