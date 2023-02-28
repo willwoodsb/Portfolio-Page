@@ -227,7 +227,7 @@ function makeSticky(element) {
                 if (isHovering(element) && i <= 2000) {
                     i = 0;
                     hoverLoop();
-                } else if (!isHovering || i <= 2000) {
+                } else if (!isHovering(element) && i <= 2000) {
                     i += 250;
                     hoverLoop();
                 } else {
