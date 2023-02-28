@@ -20,7 +20,7 @@ include 'inc/head.php';
               looking to pursue a career in Tech. To this end, I am currently
               studying on the <a href="./scs.php">Netmatters Code Bootcamp</a> programme, which will give me the tools
               I need to be a highly proficient, full-stack developer.</p>
-              <h2 id="skills-title">Skills</h2>
+              <h2 id="skills-title">Proficient in:</h2>
               <div class="skills-grid">
                 <div class="skills-grid__item">
                   <h3>HTML5</h3>

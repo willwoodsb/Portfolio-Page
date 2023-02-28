@@ -599,7 +599,13 @@ pre {
   justify-content: center; }
   .skills-grid__item {
     width: 230px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background: #e6eaee;
+    border-radius: 10px;
+    padding: 15px;
+    margin-left: 10px;
+    margin-right: 10px; }
   @media screen and (min-width: 992px) {
     .skills-grid {
       justify-content: center; } }
@@ -611,7 +617,8 @@ pre {
     .skills-grid:not(:last-of-type) {
       margin-right: 10px; } }
   .skills-grid h3 {
-    color: #d64541; }
+    color: #d64541;
+    font-weight: 900; }
 
 #skills-title {
   text-align: center;
