@@ -74,6 +74,7 @@ $(document).ready(function() {
 const input = $('input:not([type=submit]), textarea');
 const email = $('input[type = email]');
 
+
 function notempty(target) {
     if (target.value == "") {
         $(`#${target.id} + .error`).show();
@@ -100,6 +101,10 @@ input.on('change', function (event) {
 });
 
 function submitForm(userInput){
+    validateEmail(userInput.email);
+    notempty(userInput.fname);
+    notempty(userInput.lname);
+    notempty(userInput.message);
     if(validateEmail(userInput.email)
         && notempty(userInput.fname)
         && notempty(userInput.lname)
