@@ -11,7 +11,7 @@ $portfolio_array["netmatters"] = [
 ];
 $portfolio_array["js-array"] = [
     "title" => "JS Array",
-    "website-link" => "#",
+    "website-link" => "https://jsarray.william-woodsballard.netmatters-scs.co.uk/",
     "repo-link" => "https://github.com/willwoodsb/JS-Array",
     "img-path" => "img/Screenshot 2023-02-24 154635.png",
     "description" => "Photo array project using, JavaScript that retrieves random photos from the Unsplash API and displays them according to user input."
