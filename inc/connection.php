@@ -1,13 +1,13 @@
 <?php
 
 $password = "j3J8mbYeeF2FkqR";
-$username = "willwoodsba_wwoodsballard";
+$username = "wwoodsba_wwoodsballard";
 $database = "wwoodsba_portfolio";
-$servername = "localhost:3306";
+$servername = "localhost";
 
 
 try {
-    $db = new PDO("mysql:host=$servername;dbname=$database", 'root', '');
+    $db = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
 } catch (Exception $e) {
     echo "error connecting to database";
     echo $e->getMessage();
