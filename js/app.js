@@ -116,18 +116,29 @@ function submitForm(userInput){
 //scroll button animations
 $('.internal-links').on('click', function(event) {
     popoutState = true;
+    if ($(window).width() < 768) {
 
-    setTimeout(function() {
-        let target = $(event.target.hash);
-        if (target) {
+        setTimeout(function() {
+            let target = $(event.target.hash);
+            if (target) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 700);
+            }
+        }, 550);
+    } else {
+        let target = $(this.getAttribute('href'));
+        if (target.length) {
             event.preventDefault();
             $('html, body').stop().animate({
                 scrollTop: target.offset().top
             }, 700);
         }
-    }, 550);
+    }
     
 });
+
 //scroll button animations
 $('.scroll').on('click', function(event) {
 
