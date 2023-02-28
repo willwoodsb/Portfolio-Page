@@ -63,24 +63,24 @@ include 'inc/head.php';
                   <h3>willwoodsb@gmail.com</h3>
                 </div>
                 <div class="form__col">
-                  <form method="post" name="myForm" action="inc/postData.php">
+                  <form method="post" name="myForm" action="inc/postData.php" onsubmit="return submitForm(document.myForm)">
                     <div class="form__col--child">
-                      <input type="text" class="" id="fname" name="fname" placeholder="First Name" required>
+                      <input type="text" class="" id="fname" name="fname" placeholder="First Name">
                       <p class="error">Please enter your first name</p>
                     </div>
                     <div class="form__col--child">
-                      <input type="text" class="" id="lname" name="lname" placeholder="Last Name" required>
+                      <input type="text" class="" id="lname" name="lname" placeholder="Last Name">
                       <p class="error">Please enter your last name</p>
                     </div>
                     <div class="form__col--child">
-                      <input type="email" class="" id="email" name="email" placeholder="Email Address" required>
+                      <input type="email" class="" id="email" name="email" placeholder="Email Address">
                       <p class="error">Please enter a valid email</p>
                     </div>
                     <div class="form__col--child">
-                      <textarea class="" id="message" name="message" placeholder="Message" required></textarea>
+                      <textarea class="" id="message" name="message" placeholder="Message"></textarea>
                       <p class="error">Please enter a message</p>
                     </div>
-                    <input type="submit" class="form__col--child" value="Send Message" onclick="submitForm(document.myForm)">
+                    <input type="submit" class="form__col--child" value="Send Message">
                   </form>
                 </div>
               </div>
