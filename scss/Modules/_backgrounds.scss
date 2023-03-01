@@ -23,7 +23,7 @@
 }
 .about-me {
     &__header {
-        background-image: url("../img/about-me-back.JPG"), linear-gradient(to bottom, darken($canary-wharf, 20%), lighten($canary-wharf, 20%));
+        background-image: url("../img/about-me-back.JPG");
     }
 }
 .water, .about-me, .scs {

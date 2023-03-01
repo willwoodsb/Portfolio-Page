@@ -567,8 +567,7 @@ footer {
   margin-bottom: 60px; }
   #about-me-text p:first-child {
     color: #333645;
-    font-weight: 900;
-    font-style: italic; }
+    font-weight: 900; }
   #about-me-text a {
     color: #858ba5; }
 
@@ -638,7 +637,7 @@ pre {
   background-position: left; }
 
 .about-me__header {
-  background-image: url("../img/about-me-back.JPG"), linear-gradient(to bottom, #5c6e83, #ced5dd); }
+  background-image: url("../img/about-me-back.JPG"); }
 
 .water, .about-me, .scs {
   background-position: center; }
